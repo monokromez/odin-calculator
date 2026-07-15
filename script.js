@@ -16,29 +16,50 @@ const numberButtons = document.querySelectorAll('.number-button');
 const operatorButtons = document.querySelectorAll('.op-button');
 
 
-function operate(number1, operatorSymbol, number2) {
+// ===== The four basic math functions =====
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    if (b === 0) {
+        return "error";
+    }
+    return a / b;
+}
+
+
+// ===== operate() takes an operator and two numbers, and calls the =====
+// ===== right function above based on which operator was passed in =====
+function operate(operatorSymbol, number1, number2) {
     let a = parseFloat(number1);
     let b = parseFloat(number2);
 
     if (operatorSymbol === "+") {
-        return a + b;
+        return add(a, b);
     } else if (operatorSymbol === "-") {
-        return a - b;
+        return subtract(a, b);
     } else if (operatorSymbol === "×") {
-        return a * b;
+        return multiply(a, b);
     } else if (operatorSymbol === "÷") {
-        if (b === 0) {
-            return "error";
-        } else {
-            return a / b;
-        }
+        return divide(a, b);
     }
 }
+
 
 function roundResult(number) {
     let rounded = parseFloat(number.toPrecision(10));
     return rounded.toString();
 }
+
 
 function updateDisplay() {
     if (operatorSelected !== null && firstNumber !== null) {
@@ -52,6 +73,7 @@ function updateDisplay() {
     }
 }
 
+
 function updateDecimalButton() {
     if (currentInput.includes(".")) {
         decimalButton.disabled = true;
@@ -59,6 +81,7 @@ function updateDecimalButton() {
         decimalButton.disabled = false;
     }
 }
+
 
 function showDivideByZeroError() {
     valueSolving.textContent = "Nope.";
@@ -70,6 +93,7 @@ function showDivideByZeroError() {
     hasError = true;
 }
 
+
 function clearEverything() {
     firstNumber = null;
     operatorSelected = null;
@@ -80,6 +104,7 @@ function clearEverything() {
     updateDisplay();
     updateDecimalButton();
 }
+
 
 numberButtons.forEach(function (button) {
     button.addEventListener('click', function (event) {
@@ -103,6 +128,7 @@ numberButtons.forEach(function (button) {
     });
 });
 
+
 operatorButtons.forEach(function (button) {
     button.addEventListener('click', function (event) {
         if (hasError) {
@@ -120,7 +146,7 @@ operatorButtons.forEach(function (button) {
 
         } else {
             let secondNumber = currentInput;
-            let result = operate(firstNumber, operatorSelected, secondNumber);
+            let result = operate(operatorSelected, firstNumber, secondNumber);
 
             if (result === "error") {
                 showDivideByZeroError();
@@ -141,6 +167,7 @@ operatorButtons.forEach(function (button) {
         updateDecimalButton();
     });
 });
+
 
 topButtons.forEach(function (button) {
     button.addEventListener('click', function (event) {
@@ -175,8 +202,6 @@ topButtons.forEach(function (button) {
                 valueAnswer.textContent = "";
 
             } else {
-                // Digits have been typed for the second number —
-                // erase those digits one at a time
                 let trimmedInput = currentInput.slice(0, -1);
 
                 if (trimmedInput.length === 0) {
@@ -213,7 +238,7 @@ topButtons.forEach(function (button) {
             }
 
             let secondNumber = currentInput;
-            let result = operate(firstNumber, operatorSelected, secondNumber);
+            let result = operate(operatorSelected, firstNumber, secondNumber);
 
             if (result === "error") {
                 showDivideByZeroError();
