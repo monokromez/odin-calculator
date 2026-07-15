@@ -15,8 +15,6 @@ const topButtons = document.querySelectorAll('.top-button');
 const numberButtons = document.querySelectorAll('.number-button');
 const operatorButtons = document.querySelectorAll('.op-button');
 
-
-// ===== The four basic math functions =====
 function add(a, b) {
     return a + b;
 }
@@ -36,9 +34,6 @@ function divide(a, b) {
     return a / b;
 }
 
-
-// ===== operate() takes an operator and two numbers, and calls the =====
-// ===== right function above based on which operator was passed in =====
 function operate(operatorSymbol, number1, number2) {
     let a = parseFloat(number1);
     let b = parseFloat(number2);
