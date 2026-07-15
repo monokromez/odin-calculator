@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-image: url(bg-retro-waves.png);
+    background-repeat: no-repeat;
+}
+
+#container-calculator {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 30px;
+    background-color: #5c5c5c;
+
+    border-bottom: 7px solid #2c2c2c;
+    border-left: 7px solid #2c2c2c;
+
+    border-top: 7px solid #808080;
+    border-right: 7px solid #808080;
+    border-radius: 7px;
+    border-bottom-right-radius: 100px;
+    border-top-left-radius: 100px;
+}
+
+#calculator-screen-container {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top-left-radius: 70px;
+}
+
+#calculator-screen-main {
+    background-color: #374630;
+    width: 100%;
+    height: 170px;
+    border-top-left-radius: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: white;
+    padding: 10px;
+    gap: 20px
+}
+
+#calculator-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+#buttons-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 9px;
+}
+
+#buttons-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#buttons-number {
+    width: 70%;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-around;
+    
+}
+
+#buttons-operation {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.top-button {
+    width: 22%;
+    height: 50px;
+    background-color: rgb(170, 0, 0);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    border-top: 2px solid rgb(201, 120, 120);
+    border-right: 2px solid rgb(201, 120, 120);
+    border-bottom: 2px solid rgb(73, 0, 0);
+    border-left: 2px solid rgb(73, 0, 0);
+}
+
+.number-button {
+    width: 32%;
+    height: 60px;
+    border-radius: 15px;
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 14pt;
+    font-weight: bold;
+    border-top: 2px solid #807d7d;
+    border-right: 2px solid #807d7d;
+    border-bottom: 2px solid #000000;
+    border-left: 2px solid #000000; 
+}
+
+.op-button {
+    width: 90%;
+    height: 22%;
+    border-radius: 15px;
+    background-color: orange;
+    font-size: 14pt;
+    font-weight: bold;
+    border-top: 2px solid rgb(255, 216, 144);
+    border-right: 2px solid rgb(255, 216, 144);
+    border-bottom: 2px solid rgb(105, 76, 22);
+    border-left: 2px solid rgb(105, 76, 22); 
+}
+
+#btn-add {
+    border-bottom-right-radius: 70px;
+}
+
+.top-button:hover {
+    /* border-top: 2px solid rgb(201, 120, 120);
+    border-right: 2px solid rgb(201, 120, 120);
+    border-bottom: 2px solid rgb(73, 0, 0);
+    border-left: 2px solid rgb(73, 0, 0); */
+    background-color: rgb(184, 76, 76);
+}
+
+.number-button:hover {
+    /* border-top: 2px solid #807d7d;
+    border-right: 2px solid #807d7d;
+    border-bottom: 2px solid #000000;
+    border-left: 2px solid #000000;  */
+    background-color: #5c5a5a;
+}
+
+.op-button:hover {
+    /* border-top: 2px solid rgb(255, 216, 144);
+    border-right: 2px solid rgb(255, 216, 144);
+    border-bottom: 2px solid rgb(105, 76, 22);
+    border-left: 2px solid rgb(105, 76, 22);  */
+    background-color: rgb(247, 206, 130);
+}
+
+.top-button:active {
+    border-bottom: 2px solid rgb(201, 120, 120);
+    border-left: 2px solid rgb(201, 120, 120);
+    border-top: 2px solid rgb(73, 0, 0);
+    border-right: 2px solid rgb(73, 0, 0);
+    background-color: rgb(116, 9, 9);
+}
+
+.number-button:active {
+    border-bottom: 2px solid #807d7d;
+    border-left: 2px solid #807d7d;
+    border-top: 2px solid #000000;
+    border-right: 2px solid #000000;
+    background-color: #000000;
+}
+
+.op-button:active {
+    border-bottom: 2px solid rgb(255, 216, 144);
+    border-left: 2px solid rgb(255, 216, 144);
+    border-top: 2px solid rgb(105, 76, 22);
+    border-right: 2px solid rgb(105, 76, 22); 
+    background-color: rgb(201, 130, 0);
+}
+
+#solving-value {
+    font-family: 'Silkscreen';
+    font-size: 22pt;
+}
+
+#answer-value {
+    font-family: 'Silkscreen';
+    font-size: 17pt;
+    color: greenyellow;
+}
